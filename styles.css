@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  min-height: 100vh;
+  background-color: black; }
+
+@font-face {
+  font-family: 'Brush';
+  src: url("font/brush.woff");
+  src: local("Brush"), url("font/brush.woff") format("woff"), url("font/brush.woff") format("truetype"); }
+.container {
+  width: 100%; }
+
+.content {
+  margin: 0 auto;
+  max-width: 100%;
+  overflow-x: auto; }
+
+h1, h2 {
+  color: #e4042b;
+  font-family: Brush;
+  font-size: 97px;
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+  top: 0;
+  right: -20px; }
+  @media (min-width: 320px) {
+    h1, h2 {
+      font-size: 119px; } }
+
+h3 {
+  color: #e4042b;
+  font-size: 15px;
+  margin: 0;
+  font-weight: 800; }
+
+h4 {
+  color: #F4F4F4;
+  font-size: 32px;
+  margin: 0 0 22px;
+  font-weight: 800; }
+
+.pools {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  flex-wrap: nowrap;
+  min-width: fit-content; }
+  @media (min-width: 1024px) {
+    .pools {
+      flex-wrap: wrap; } }
+  .pools .poolWhite, .pools .poolRed {
+    background-color: #F4F4F4;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden; }
+    @media (min-width: 320px) {
+      .pools .poolWhite, .pools .poolRed {
+        margin: 13px;
+        height: 375px;
+        width: 320px; } }
+    @media (min-width: 1024px) {
+      .pools .poolWhite, .pools .poolRed {
+        width: 350px; } }
+    .pools .poolWhite .innerContent, .pools .poolRed .innerContent {
+      background-color: #111111;
+      /* float: right; */
+      padding: 59px 0 0 23px;
+      /* margin: 76px; */
+      position: absolute;
+      top: 70px;
+      right: 0;
+      left: 16px;
+      bottom: 16px; }
+      .pools .poolWhite .innerContent .innerUl, .pools .poolRed .innerContent .innerUl {
+        padding: 0; }
+        .pools .poolWhite .innerContent .innerUl hr, .pools .poolRed .innerContent .innerUl hr {
+          margin: 0;
+          border: 0;
+          background: #333333;
+          height: 1px; }
+        .pools .poolWhite .innerContent .innerUl li, .pools .poolRed .innerContent .innerUl li {
+          display: block;
+          color: #cccccc;
+          font-size: 13px;
+          font-weight: 800;
+          line-height: 1.6; }
+          .pools .poolWhite .innerContent .innerUl li span, .pools .poolRed .innerContent .innerUl li span {
+            color: #e4042b; }
+  .pools .poolRed {
+    background-color: #e4042b; }
+    .pools .poolRed h2 {
+      color: #F4F4F4; }
+
+/*# sourceMappingURL=styles.css.map */

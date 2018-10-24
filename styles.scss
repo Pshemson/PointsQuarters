@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  min-height: 100vh;
+  background-color: black;
+}
+
+//Fonts
+
+@font-face {
+  font-family: 'Brush';
+  src: url('font/brush.woff');
+  src: local('Brush'), url('font/brush.woff') format('woff'), url('font/brush.woff') format('truetype');
+}
+
+//Mixins
+//RWD:  Minimum widths to apply styles (mobile first)
+
+@mixin xSmall {
+  @media (min-width: 320px) {
+    @content;
+  }
+}
+
+@mixin Small {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin Medium {
+  @media (min-width: 1287px) {
+    @content;
+  }
+}
+
+@mixin Large {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}
+
+.container {
+  width: 100%;
+
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+h1, h2 {
+  color: rgb(228, 4, 43);
+  font-family: Brush;
+  font-size: 97px;
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+  top: 0;
+  right: -20px;
+  @include xSmall {
+    font-size: 119px;
+  }
+}
+
+h3 {
+  color: rgb(228, 4, 43);
+  font-size: 15px;
+  margin: 0;
+  font-weight: 800;
+}
+
+h4 {
+  color: #F4F4F4;
+  font-size: 32px;
+  margin: 0 0 22px;
+  font-weight: 800;
+}
+
+
+.pools {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  flex-wrap: nowrap;
+  min-width: fit-content;
+  @include Small {
+    flex-wrap: wrap;
+  }
+  .poolWhite, .poolRed {
+    background-color: #F4F4F4;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    //position: relative;
+    @include xSmall {
+      margin: 13px;
+      height: 375px;
+      width: 320px;
+
+    }
+    @include Small {
+      width: 350px;
+    }
+    .innerContent {
+      background-color: #111111;
+      /* float: right; */
+      padding: 59px 0 0 23px;
+      /* margin: 76px; */
+      position: absolute;
+      top: 70px;
+      right: 0;
+      left: 16px;
+      bottom: 16px;
+      .innerUl {
+        padding: 0;
+        hr {
+          margin: 0;
+          border: 0;
+          background: rgb(51, 51, 51);
+          height: 1px;
+        }
+        li {
+          display: block;
+          color: rgb(204, 204, 204);
+          font-size: 13px;
+          font-weight: 800;
+          line-height: 1.6;
+          span {
+            color: rgb(228, 4, 43);
+          }
+        }
+      }
+    }
+  }
+  .poolRed {
+    background-color: rgb(228, 4, 43);
+    h2 {
+      color: #F4F4F4;
+    }
+  }
+}
+
